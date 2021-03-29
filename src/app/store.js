@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import paginationReducer from '../features/counter/paginationSlice';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    pagination: paginationReducer,
   },
 });
