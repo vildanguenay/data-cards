@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { useDispatch } from 'react-redux';
+import { fetchData } from '../../features/counter/subscribersSlice';
 
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -10,14 +13,23 @@ import Typography from '@material-ui/core/Typography';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
+const useStyles = makeStyles(
+  {
+    root: {
+      maxWidth: 345,
+    },
   },
-});
+  []
+);
 
 export default function Dashboard() {
   const classes = useStyles();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchData());
+  });
 
   return (
     <Card className={classes.root}>
