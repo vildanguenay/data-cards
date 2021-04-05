@@ -23,7 +23,6 @@ export default function PaginationRounded() {
 
   const countPage = (event, newPage) => {
     if (newPage > currentPage) {
-      console.log('page');
       return dispatch(increment(newPage));
     }
     return dispatch(decrement(newPage));

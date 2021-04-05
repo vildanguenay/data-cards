@@ -12,7 +12,6 @@ export const fetchData = createAsyncThunk('subscriber/fetchData', async () => {
 export const subscribersSlice = createSlice({
   name: 'subscriber',
   initialState,
-  reducers: {},
   extraReducers: {
     [fetchData.fulfilled]: (state, action) => {
       return action.payload;
