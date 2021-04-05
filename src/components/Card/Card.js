@@ -35,7 +35,7 @@ export default function Card() {
   return (
     <>
       {subscribersData.map((card) => (
-        <CardUI className={classes.root}>
+        <CardUI key={card.id} className={classes.root}>
           <CardActionArea>
             <CardMedia
               component="img"

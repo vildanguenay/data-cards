@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchData } from '../../features/counter/subscribersSlice';
 import { decrement, increment } from '../../features/counter/paginationSlice';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
@@ -23,6 +24,7 @@ export default function PaginationRounded() {
 
   const countPage = (event, newPage) => {
     if (newPage > currentPage) {
+      dispatch(fetchData());
       return dispatch(increment(newPage));
     }
     return dispatch(decrement(newPage));
@@ -33,7 +35,7 @@ export default function PaginationRounded() {
       <Pagination
         page={currentPage}
         onChange={countPage}
-        count={8}
+        count={3}
         variant="outlined"
         shape="rounded"
         size="small"

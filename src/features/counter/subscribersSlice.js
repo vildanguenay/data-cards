@@ -4,7 +4,7 @@ const initialState = [];
 
 export const fetchData = createAsyncThunk('subscriber/fetchData', async () => {
   const response = fetch(
-    'https://604868d1b801a40017ccdac6.mockapi.io/api/v1/subscriber'
+    'https://604868d1b801a40017ccdac6.mockapi.io/api/v1/subscriber?page=1&limit=3'
   ).then((res) => res.json());
   return response;
 });
