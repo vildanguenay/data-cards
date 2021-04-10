@@ -28,6 +28,8 @@ export default function Card() {
   const dispatch = useDispatch();
   const subscribersData = useSelector((state) => state.data);
   const currentPage = useSelector((state) => state.pagination);
+  const beginPaginationFrom0 = currentPage - 1;
+  console.log('???', currentPage);
   console.log(subscribersData);
   useEffect(() => {
     dispatch(fetchData());
@@ -36,7 +38,7 @@ export default function Card() {
   return (
     <>
       {subscribersData
-        .slice(currentPage * 7, currentPage * 7 + 7)
+        .slice(beginPaginationFrom0 * 7, beginPaginationFrom0 * 7 + 7)
         .map((card) => (
           <CardUI key={card.id} className={classes.root}>
             <CardActionArea>

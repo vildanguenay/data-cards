@@ -22,11 +22,11 @@ export default function PaginationRounded() {
   const currentPage = useSelector((state) => state.pagination);
 
   const countPage = (event, pageSelected) => {
-    // console.log(currentPage);
     if (pageSelected > currentPage) {
       return dispatch(increment(pageSelected));
+    } else if (pageSelected < currentPage) {
+      return dispatch(decrement(pageSelected));
     }
-    return dispatch(decrement(pageSelected));
   };
 
   return (
@@ -34,10 +34,12 @@ export default function PaginationRounded() {
       <Pagination
         page
         onChange={countPage}
-        count={2}
+        count={5}
         variant="outlined"
         shape="rounded"
         size="small"
+        hideNextButton
+        hidePrevButton
       />
     </div>
   );
