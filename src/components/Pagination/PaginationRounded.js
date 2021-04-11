@@ -4,15 +4,13 @@ import { decrement, increment } from '../../features/counter/paginationSlice';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 
-// import clsx from 'clsx';
-import './PaginationRounded.css';
-
 const useStyles = makeStyles((theme) => ({
   root: {
     color: 'blue',
     '& > *': {
       marginTop: theme.spacing(2),
     },
+    alignSelf: 'center',
   },
 }));
 

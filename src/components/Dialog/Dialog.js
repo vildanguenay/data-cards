@@ -8,7 +8,7 @@ import MuiDialogContent from '@material-ui/core/DialogContent';
 import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import { ListItemText } from '@material-ui/core';
+import Accordion from '../Accordion/Accordion';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
@@ -62,9 +62,7 @@ const DialogActions = withStyles((theme) => ({
   [theme.breakpoints.up('md')]: {
     backgroundColor: theme.palette.primary.main,
   },
-  [theme.breakpoints.up('lg')]: {
-    backgroundColor: 'green',
-  },
+  [theme.breakpoints.up('lg')]: {},
 }))(MuiDialogActions);
 
 export default function CustomizedDialogs(props) {
@@ -95,27 +93,13 @@ export default function CustomizedDialogs(props) {
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
+        maxWidth="lg"
       >
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           {card.name}
         </DialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>
-            accounts:
-            {card.accounts.map((account) => (
-              <ListItemText primary={account.name} />
-            ))}
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
-          </Typography>
+          <Accordion card={card} />
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose} color="primary">

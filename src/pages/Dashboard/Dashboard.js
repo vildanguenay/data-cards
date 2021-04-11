@@ -10,9 +10,20 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    [theme.breakpoints.up('lg')]: {
+      // flexDirection: 'row',
+    },
   },
   title2: {
-    marginTop: 'unset',
+    // marginTop: 'unset',
+  },
+  cardsContainer: {
+    [theme.breakpoints.up('lg')]: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
+    },
   },
 }));
 
@@ -22,7 +33,9 @@ export default function Dashboard() {
     <div className={classes.root}>
       <h1>Welcome to the Dashboard!</h1>
       <h2 className={classes.title2}>Subscribers' data:</h2>
-      <Card />
+      <div className={classes.cardsContainer}>
+        <Card />
+      </div>
       <Pagination />
     </div>
   );

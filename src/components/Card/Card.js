@@ -20,7 +20,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   layout: {
-    width: '100%',
+    // width: '100%',
+    marginBottom: theme.spacing(1),
+    [theme.breakpoints.up('md')]: {
+      width: '25%',
+      margin: theme.spacing(1),
+    },
   },
 }));
 
@@ -46,10 +51,9 @@ export default function Card() {
             <CardActionArea>
               <CardMedia
                 component="img"
-                alt="Contemplative Reptile"
-                height="140"
-                image="/static/images/cards/contemplative-reptile.jpg"
-                title="Avatar"
+                alt="image"
+                height="130"
+                image={card.avatar}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
