@@ -34,7 +34,7 @@ export default function PaginationRounded() {
       <Pagination
         page
         onChange={countPage}
-        count={5}
+        count={2}
         variant="outlined"
         shape="rounded"
         size="small"
