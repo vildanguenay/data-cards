@@ -19,8 +19,6 @@ export default function BasicTable(props) {
 
   const { calls } = props;
 
-  console.log(calls);
-
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">

@@ -10,12 +10,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    [theme.breakpoints.up('lg')]: {
-      // flexDirection: 'row',
-    },
-  },
-  title2: {
-    // marginTop: 'unset',
   },
   cardsContainer: {
     width: '100%',

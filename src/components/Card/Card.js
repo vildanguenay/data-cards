@@ -36,8 +36,7 @@ export default function Card() {
   const subscribersData = useSelector((state) => state.data);
   const currentPage = useSelector((state) => state.pagination);
   const beginPaginationFrom0 = currentPage - 1;
-  console.log('???', currentPage);
-  console.log(subscribersData);
+
   useEffect(() => {
     dispatch(fetchData());
   }, []);
