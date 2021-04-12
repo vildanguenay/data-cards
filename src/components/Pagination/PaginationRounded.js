@@ -30,14 +30,12 @@ export default function PaginationRounded() {
   return (
     <div className={classes.root}>
       <Pagination
-        page
+        page={currentPage}
         onChange={countPage}
-        count={2}
+        count={8}
         variant="outlined"
         shape="rounded"
         size="small"
-        hideNextButton
-        hidePrevButton
       />
     </div>
   );
