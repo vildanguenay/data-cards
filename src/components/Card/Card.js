@@ -35,48 +35,44 @@ export default function Card() {
   const dispatch = useDispatch();
   const subscribersData = useSelector((state) => state.data);
   const currentPage = useSelector((state) => state.pagination);
-  const beginPaginationFrom0 = currentPage - 1;
-
   useEffect(() => {
     dispatch(fetchData());
-  }, []);
+  }, [dispatch, currentPage]);
 
   return (
     <>
-      {subscribersData
-        .slice(beginPaginationFrom0 * 7, beginPaginationFrom0 * 7 + 7)
-        .map((card) => (
-          <CardUI key={card.id} className={classes.layout}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                alt="image"
-                height="130"
-                image={card.avatar}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  {card.name}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  id: {card.id}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  country: {card.country}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  city: {card.city}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  address: {card.address}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardAction className={classes.root}>
-              <Dialog card={card} />
-            </CardAction>
-          </CardUI>
-        ))}
+      {subscribersData.map((card) => (
+        <CardUI key={card.id} className={classes.layout}>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              alt="image"
+              height="130"
+              image={card.avatar}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {card.name}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                id: {card.id}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                country: {card.country}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                city: {card.city}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                address: {card.address}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardAction className={classes.root}>
+            <Dialog card={card} />
+          </CardAction>
+        </CardUI>
+      ))}
     </>
   );
 }

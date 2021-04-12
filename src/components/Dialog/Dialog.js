@@ -59,9 +59,6 @@ const DialogActions = withStyles((theme) => ({
     margin: 0,
     padding: theme.spacing(1),
   },
-  [theme.breakpoints.up('md')]: {
-    backgroundColor: theme.palette.primary.main,
-  },
   [theme.breakpoints.up('lg')]: {},
 }))(MuiDialogActions);
 

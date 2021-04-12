@@ -5,11 +5,9 @@ export const paginationSlice = createSlice({
   initialState: 1,
   reducers: {
     increment: (state, action) => {
-      console.log('increment', action.payload);
       return action.payload;
     },
     decrement: (state, action) => {
-      console.log('decrement', action.payload);
       return action.payload;
     },
   },

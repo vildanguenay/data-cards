@@ -34,9 +34,7 @@ export default function SimpleAccordion(props) {
           <Typography className={classes.heading}>Accounts</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            <TableAccounts accounts={card.accounts} />
-          </Typography>
+          <TableAccounts accounts={card.accounts} />
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -48,9 +46,7 @@ export default function SimpleAccordion(props) {
           <Typography className={classes.heading}>Calls</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            <TableCalls calls={card.calls} />
-          </Typography>
+          <TableCalls calls={card.calls} />
         </AccordionDetails>
       </Accordion>
     </div>
