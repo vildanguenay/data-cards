@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     // marginTop: 'unset',
   },
   cardsContainer: {
+    width: '100%',
     [theme.breakpoints.up('lg')]: {
       display: 'flex',
       flexDirection: 'row',
